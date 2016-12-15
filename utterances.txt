@@ -1,0 +1,76 @@
+PreheatIntent to warm up
+PreheatIntent to up
+PreheatIntent to pre heat
+PreheatIntent to preheat
+PreheatIntent preheat
+PreheatIntent heat
+PreheatIntent heater
+PreheatIntent turn the heater on
+PreheatIntent warm up
+PreheatIntent warm the car up
+PreheatIntent heat up
+PreheatIntent heat the car up
+PreheatIntent preheat for me
+PreheatIntent start the heaters
+PreheatIntent turn the heater on
+PreheatIntent turn on the heater
+PreheatIntent turn the heat on
+PreheatIntent turn on the heat
+PreheatIntent warm up
+PreheatIntent make it toasty for me
+PreheatIntent it's cold outside
+PreheatIntent heat my seat up
+CoolingIntent to cool down
+CoolingIntent to down
+CoolingIntent to turn the air conditioning on
+CoolingIntent air conditioning
+CoolingIntent cold
+CoolingIntent turn on air conditioning
+CoolingIntent turn air conditioning on
+CoolingIntent cool down
+CoolingIntent cool down for me
+UpdateIntent to update
+UpdateIntent update
+UpdateIntent status 
+UpdateIntent update status
+UpdateIntent for an update
+UpdateIntent latest data
+UpdateIntent for the latest data
+UpdateIntent to get an update
+UpdateIntent to send an update
+UpdateIntent to update status
+UpdateIntent to send an update
+UpdateIntent to download an update
+RangeIntent how many miles
+RangeIntent miles
+RangeIntent how many miles are in the tank
+RangeIntent how far can I drive
+RangeIntent distance
+RangeIntent how far
+RangeIntent range
+RangeIntent how much range
+ChargeIntent charge
+ChargeIntent percent
+ChargeIntent percentage 
+ChargeIntent how much charge
+ChargeIntent how much charge it has
+ChargeIntent what percent
+ChargeIntent what percent battery
+ChargeIntent battery
+ChargeIntent battery percentage
+ChargingIntent charging
+ChargingIntent is it charging
+ChargingIntent if it's charging
+ChargingIntent if it's charging up
+ChargingIntent if it's currently charging
+ChargingIntent currently charging
+ChargingIntent if it's on charge
+ChargingIntent charging up
+ConnectedIntent connected
+ConnectedIntent connected to power
+ConnectedIntent connected to mains
+ConnectedIntent connected to charger
+ConnectedIntent plugged in
+ConnectedIntent if it's plugged in
+ConnectedIntent is it plugged in
+ConnectedIntent currently plugged in
