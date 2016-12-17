@@ -4,9 +4,9 @@ An Alexa Skill to control the Nissan Leaf (and eNV200).
 # Interacting with Alexa
 You interact with the skill using the invocation name "my car". For example:
 
-Alexa, ask *my car*
-Alexa, tell *my car*
-Alexa, launch *my car*
+* Alexa, ask *my car*
+* Alexa, tell *my car*
+* Alexa, launch *my car*
 
 # Commands
 The skill has the following features:
