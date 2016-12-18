@@ -75,10 +75,11 @@ function login(successCallback) {
 		// Sometimes the results from the API include a VehicleInfoList array, sometimes they omit it!
 		if (loginResponse.VehicleInfoList) {
 			sessionid = encodeURIComponent(loginResponse.VehicleInfoList.vehicleInfo[0].custom_sessionid);
+			vin = encodeURIComponent(loginResponse.VehicleInfoList.vehicleInfo[0].vin);
 		} else  {
 			sessionid = encodeURIComponent(loginResponse.vehicleInfo[0].custom_sessionid);
+			vin = encodeURIComponent(loginResponse.vehicleInfo[0].vin);			
 		}
-		vin = encodeURIComponent(loginResponse.VehicleInfoList.vehicleInfo[0].vin);
 		successCallback();
 	}, 
 	loginFailureCallback);
