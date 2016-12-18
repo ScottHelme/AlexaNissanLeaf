@@ -29,6 +29,18 @@ CoolingIntent turn on air conditioning
 CoolingIntent turn air conditioning on
 CoolingIntent cool down
 CoolingIntent cool down for me
+ClimateControlOffIntent to turn climate control off
+ClimateControlOffIntent to stop climate control
+ClimateControlOffIntent to stop air conditioning
+ClimateControlOffIntent air conditioning off
+ClimateControlOffIntent turn air conditioning off
+ClimateControlOffIntent to turn the air conditioning off
+ClimateControlOffIntent save energy
+ClimateControlOffIntent turn the heater off
+ClimateControlOffIntent stop preheat
+ClimateControlOffIntent turn off the heater
+ClimateControlOffIntent turn the heat off
+ClimateControlOffIntent stop the heaters
 UpdateIntent to update
 UpdateIntent update
 UpdateIntent status 

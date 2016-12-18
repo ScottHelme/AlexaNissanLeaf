@@ -124,6 +124,19 @@ exports.sendCoolingCommand = (successCallback, failureCallback) => {
 }
 
 /**
+* Disable the climate control in the car.
+**/
+exports.sendClimateControlOffCommand = (successCallback, failureCallback) => {
+	login(() => sendRequest("ACRemoteOffRequest.php",
+	"UserId=" + username +
+	"&custom_sessionid=" + sessionid +
+	"&RegionCode=" + region_code +
+	"&VIN=" + vin,
+	successCallback,
+	failureCallback));
+}
+
+/**
 * Request the API fetch updated data from the car.
 **/
 exports.sendUpdateCommand = (successCallback, failureCallback) => {
