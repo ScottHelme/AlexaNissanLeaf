@@ -104,6 +104,12 @@ exports.handler = (event, context) => {
 						() => sendResponse("Car Cooling", "I can't communicate with the car at the moment.")
 					);
 					break;
+				case "ClimateControlOffIntent":
+					car.sendClimateControlOffCommand(
+						response => sendResponse("Climate Control Off", "The cars climate control is off."),
+						() => sendResponse("Climate Control Off", "I can't communicate with the car at the moment.")
+					);
+					break;
 				case "UpdateIntent":
 					car.sendUpdateCommand(
 						response => sendResponse("Car Update", "I'm downloading the latest data for you."),

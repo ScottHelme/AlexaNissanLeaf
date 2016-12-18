@@ -2,6 +2,7 @@
   "intents": [
     { "intent": "PreheatIntent" },
     { "intent": "CoolingIntent" },
+    { "intent": "ClimateControlOffIntent" },
     { "intent": "UpdateIntent" },
     { "intent": "RangeIntent" },
     { "intent": "ChargeIntent" },
