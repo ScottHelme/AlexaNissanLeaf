@@ -72,8 +72,8 @@ function login(successCallback) {
 	"&Password=" + password,
 	loginResponse => {
 		// Get the session id and VIN for future API calls.
-		sessionid = encodeURIComponent(loginResponse.vehicleInfo[0].custom_sessionid);
-		vin = encodeURIComponent(loginResponse.vehicleInfo[0].vin);
+		sessionid = encodeURIComponent(loginResponse.VehicleInfoList.vehicleInfo[0].custom_sessionid);
+		vin = encodeURIComponent(loginResponse.VehicleInfoList.vehicleInfo[0].vin);
 		successCallback();
 	}, 
 	loginFailureCallback);
