@@ -62,6 +62,16 @@ function buildConnectedStatus(connected) {
 
 // Handling incoming requests
 exports.handler = (event, context) => {
+		
+	// Helper to return a response with a card.		
+	const sendResponse = (title, text) => {
+		context.succeed(buildResponse(text, {
+			"type": "Simple",
+			"title": title,
+			"content": text
+		}));
+	};
+
 	try {
 		// Verify the person calling the script. Get your Alexa Application ID here: https://developer.amazon.com/edw/home.html#/skills/list
 		// Click on the skill and look for the "Application ID" field.
@@ -70,15 +80,6 @@ exports.handler = (event, context) => {
 			sendResponse("Invalid Application ID", "You are not allowed to use this service.");
 			return;
 		}
-		
-		// Helper to return a response with a card.		
-		const sendResponse = (title, text) => {
-			context.succeed(buildResponse(text, {
-				"type": "Simple",
-				"title": title,
-				"content": text
-			}));
-		};
 
 		// Shared callbacks.
 		const exitCallback = () => context.succeed(buildResponse("Goodbye!"));
