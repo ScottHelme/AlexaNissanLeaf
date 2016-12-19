@@ -4,7 +4,7 @@ var algorithm = "bf-ecb";
 function pad(text) {
   pad_bytes = 8 - (text.length % 8)
   for (var x=1; x<=pad_bytes;x++)
-    text = text + String.fromCharCode(0)
+    text = text + String.fromCharCode(pad_bytes)
   return text;
 }
 
