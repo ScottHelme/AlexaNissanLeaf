@@ -2,6 +2,9 @@
 
 let https = require("https");
 
+// Require encryption.js to encrypt the password.
+var Encryption = require('./encryption.js');
+
 // Do not change this value, it is static.
 let initial_app_strings = "geORNtsZe5I4lRGjG9GZiA";
 // Possible value are NE (Europe), NNA (North America) and NCI (Canada).
@@ -9,7 +12,7 @@ let region_code = "NE";
 // You should store your username and password as environment variables. 
 // If you don't you can hard code them in the following variables.
 let username = process.env.username; // Your NissanConnect username or email address.
-let password = process.env.password; // Your NissanConnect account password.
+let password = encrypt(process.env.password); // Your NissanConnect account password.
 
 let sessionid, vin, loginFailureCallback;
 
@@ -51,6 +54,8 @@ function sendRequest(action, requestData, successCallback, failureCallback) {
 			let json = respData && respData.length ? JSON.parse(respData) : null;
 			if (json.status == 200) {
 				successCallback(respData && respData.length ? JSON.parse(respData) : null);
+			}else {
+				console.log(json);
 			}
 		});
 	});
@@ -147,4 +152,12 @@ exports.sendUpdateCommand = (successCallback, failureCallback) => {
 	"&VIN=" + vin,
 	successCallback,
 	failureCallback));
+}
+
+/**
+* Encrypt the password for use with API calls.
+**/
+function encrypt(password) {
+	var e = new Encryption();
+	return e.encrypt(password, "uyI5Dj9g8VCOFDnBRUbr3g");
 }
