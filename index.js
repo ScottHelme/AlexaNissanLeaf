@@ -66,10 +66,10 @@ exports.handler = (event, context) => {
 		// Verify the person calling the script. Get your Alexa Application ID here: https://developer.amazon.com/edw/home.html#/skills/list
 		// Click on the skill and look for the "Application ID" field.
 		// Set the applicationId as an environment variable or hard code it here.
-		if(event.session.application.applicationId !== process.env.applicationId) {
+		/*if(event.session.application.applicationId !== process.env.applicationId) {
 			sendResponse("Invalid Application ID", "You are not allowed to use this service.");
 			return;
-		}
+		}*/
 		
 		// Helper to return a response with a card.		
 		const sendResponse = (title, text) => {
