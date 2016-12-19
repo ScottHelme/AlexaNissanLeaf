@@ -17,7 +17,7 @@ The skill has the following features:
 * Update - Download the latest data from the car
 * Range - Ask how much range you have
 * Battery - Ask how much battery you have
-* Charging - Ask if the car is current charging
+* Charging - Ask if the car is currently charging
 * Connected - Ask if the car is connected to a charger
 
 # Examples
