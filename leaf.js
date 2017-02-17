@@ -8,7 +8,7 @@ var Encryption = require('./encryption.js');
 // Do not change this value, it is static.
 let initial_app_strings = "geORNtsZe5I4lRGjG9GZiA";
 // Possible value are NE (Europe), NNA (North America) and NCI (Canada).
-let region_code = "NE";
+let region_code = process.env.regioncode;
 // You should store your username and password as environment variables. 
 // If you don't you can hard code them in the following variables.
 let username = process.env.username; // Your NissanConnect username or email address.
@@ -133,6 +133,19 @@ exports.sendCoolingCommand = (successCallback, failureCallback) => {
 **/
 exports.sendClimateControlOffCommand = (successCallback, failureCallback) => {
 	login(() => sendRequest("ACRemoteOffRequest.php",
+	"UserId=" + username +
+	"&custom_sessionid=" + sessionid +
+	"&RegionCode=" + region_code +
+	"&VIN=" + vin,
+	successCallback,
+	failureCallback));
+}
+
+/**
+* Start charging the car.
+**/
+exports.sendStartChargingCommand = (successCallback, failureCallback) => {
+	login(() => sendRequest("BatteryRemoteChargingRequest.php",
 	"UserId=" + username +
 	"&custom_sessionid=" + sessionid +
 	"&RegionCode=" + region_code +

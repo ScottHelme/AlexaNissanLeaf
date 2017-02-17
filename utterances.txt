@@ -61,7 +61,6 @@ RangeIntent distance
 RangeIntent how far
 RangeIntent range
 RangeIntent how much range
-ChargeIntent charge
 ChargeIntent percent
 ChargeIntent percentage 
 ChargeIntent how much charge
@@ -86,3 +85,6 @@ ConnectedIntent plugged in
 ConnectedIntent if it's plugged in
 ConnectedIntent is it plugged in
 ConnectedIntent currently plugged in
+StartChargingIntent charge
+StartChargingIntent charge now
+StartChargingIntent start charging
