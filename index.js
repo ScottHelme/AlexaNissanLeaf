@@ -74,6 +74,23 @@ exports.handler = (event, context) => {
 	};
 
 	try {
+		// Check if this is a CloudWatch scheduled event.
+		if (event.source == "aws.events" && event["detail-type"] == "Scheduled Event") {
+			console.log(event);
+			// The environmnet variable scheduledEventArn should have a value as shown in the trigger configuration for this lambda function,
+			// e.g. "arn:aws:events:us-east-1:123123123:rule/scheduledNissanLeafUpdate",
+			if (event.resources && event.resources[0] == process.env.scheduledEventArn) {
+				// Scheduled data update
+				console.log("Beginning scheduled update");
+				car.getBatteryStatus(
+					() => console.log("Scheduled update requested"),
+					() => console.log("Scheduled update failed")
+				);
+				return;
+			}
+			sendResponse("Invalid Scheduled Event", "This service is not configured to allow the source of this scheduled event.");
+			return;
+		}
 		// Verify the person calling the script. Get your Alexa Application ID here: https://developer.amazon.com/edw/home.html#/skills/list
 		// Click on the skill and look for the "Application ID" field.
 		// Set the applicationId as an environment variable or hard code it here.
