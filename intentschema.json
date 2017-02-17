@@ -8,6 +8,7 @@
     { "intent": "ChargeIntent" },
     { "intent": "ChargingIntent" },
     { "intent": "ConnectedIntent" },
+    { "intent": "StartChargingIntent" },
     { "intent": "AMAZON.HelpIntent" },
     { "intent": "AMAZON.CancelIntent" },
     { "intent": "AMAZON.StopIntent" }

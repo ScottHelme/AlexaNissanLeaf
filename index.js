@@ -21,7 +21,8 @@ function buildResponse(output, card, shouldEndSession) {
 // Helper to build the text response for range/battery status.
 function buildBatteryStatus(battery) {
 	console.log(battery);
-	let response = `You have ${Math.floor((battery.BatteryStatusRecords.BatteryStatus.BatteryRemainingAmount / battery.BatteryStatusRecords.BatteryStatus.BatteryCapacity) * 100)}% battery which will get you approximately ${Math.floor(battery.BatteryStatusRecords.CruisingRangeAcOn * 0.000568182)} miles. `;
+	const milesPerMeter = 0.000621371;
+	let response = `You have ${Math.floor((battery.BatteryStatusRecords.BatteryStatus.BatteryRemainingAmount / battery.BatteryStatusRecords.BatteryStatus.BatteryCapacity) * 100)}% battery which will get you approximately ${Math.floor(battery.BatteryStatusRecords.CruisingRangeAcOn * milesPerMeter)} miles. `;
 
 	if (battery.BatteryStatusRecords.PluginState == "CONNECTED") {
 		response += "The car is plugged in";
@@ -110,6 +111,12 @@ exports.handler = (event, context) => {
 						() => sendResponse("Climate Control Off", "I can't communicate with the car at the moment.")
 					);
 					break;
+				case "StartChargingIntent":
+					car.sendStartChargingCommand(
+						response => sendResponse("Start Charging Now", "The car is now charging for you."),
+						() => sendResponse("Start Charging Now", "I can't communicate with the car at the moment.")
+					);
+					break;
 				case "UpdateIntent":
 					car.sendUpdateCommand(
 						response => sendResponse("Car Update", "I'm downloading the latest data for you."),
@@ -153,6 +160,7 @@ exports.handler = (event, context) => {
 		}
 	} catch (err) {
 		console.error(err.message);
+		console.log(event);
 		sendResponse("Error Occurred", "An error occurred. Fire the programmer! " + err.message);
 	}
 };
