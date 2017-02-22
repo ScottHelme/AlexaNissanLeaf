@@ -22,7 +22,12 @@ function buildResponse(output, card, shouldEndSession) {
 function buildBatteryStatus(battery) {
 	console.log(battery);
 	const milesPerMeter = 0.000621371;
-	let response = `You have ${Math.floor((battery.BatteryStatusRecords.BatteryStatus.BatteryRemainingAmount / battery.BatteryStatusRecords.BatteryStatus.BatteryCapacity) * 100)}% battery which will get you approximately ${Math.floor(battery.BatteryStatusRecords.CruisingRangeAcOn * milesPerMeter)} miles. `;
+	const rangeInMiles = Math.floor(battery.BatteryStatusRecords.CruisingRangeAcOn * milesPerMeter);
+	// Current Leaf firmware gives BatteryStatusRecords.BatteryRemainingAmount in [0,12] event if the capacity
+	// has been reduced due to battery aging, e.g. BatteryStatusRecords.BatteryCapacity = 11.
+	const chargeInNissanBars = battery.BatteryStatusRecords.BatteryStatus.BatteryRemainingAmount;
+	const chargeInPercent = Math.floor(100 * chargeInNissanBars / 12);
+	let response = `You have ${chargeInPercent}% battery which will get you approximately ${rangeInMiles} miles. `;
 
 	if (battery.BatteryStatusRecords.PluginState == "CONNECTED") {
 		response += "The car is plugged in";
