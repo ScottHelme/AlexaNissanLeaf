@@ -87,7 +87,7 @@ exports.handler = (event, context) => {
 			if (event.resources && event.resources[0] == process.env.scheduledEventArn) {
 				// Scheduled data update
 				console.log("Beginning scheduled update");
-				car.getBatteryStatus(
+				car.sendUpdateCommand(
 					() => console.log("Scheduled update requested"),
 					() => console.log("Scheduled update failed")
 				);
