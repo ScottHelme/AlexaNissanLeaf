@@ -1,16 +1,162 @@
 {
-  "intents": [
-    { "intent": "PreheatIntent" },
-    { "intent": "CoolingIntent" },
-    { "intent": "ClimateControlOffIntent" },
-    { "intent": "UpdateIntent" },
-    { "intent": "RangeIntent" },
-    { "intent": "ChargeIntent" },
-    { "intent": "ChargingIntent" },
-    { "intent": "ConnectedIntent" },
-    { "intent": "StartChargingIntent" },
-    { "intent": "AMAZON.HelpIntent" },
-    { "intent": "AMAZON.CancelIntent" },
-    { "intent": "AMAZON.StopIntent" }
-  ]
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "my leaf",
+            "intents": [
+                {
+                    "name": "PreheatIntent",
+                    "slots": [],
+                    "samples": [
+                        "heat my seat up",
+                        "it's cold outside",
+                        "make it toasty for me",
+                        "turn on the heat",
+                        "turn the heat on",
+                        "turn on the heater",
+                        "start the heaters",
+                        "preheat for me",
+                        "heat the car up",
+                        "heat up",
+                        "warm the car up",
+                        "warm up",
+                        "turn the heater on",
+                        "heater",
+                        "heat",
+                        "preheat",
+                        "to pre heat",
+                        "to up",
+                        "to warm up"
+                    ]
+                },
+                {
+                    "name": "CoolingIntent",
+                    "slots": [],
+                    "samples": [
+                        "cool down for me",
+                        "cool down",
+                        "turn air conditioning on",
+                        "turn on air conditioning",
+                        "cold",
+                        "air conditioning",
+                        "to turn the air conditioning on",
+                        "to down",
+                        "to cool down"
+                    ]
+                },
+                {
+                    "name": "ClimateControlOffIntent",
+                    "slots": [],
+                    "samples": [
+                        "stop the heaters",
+                        "turn the heat off",
+                        "turn off the heater",
+                        "stop preheat",
+                        "turn the heater off",
+                        "save energy",
+                        "to turn the air conditioning off",
+                        "turn air conditioning off",
+                        "air conditioning off",
+                        "to stop air conditioning",
+                        "to stop climate control",
+                        "to turn climate control off"
+                    ]
+                },
+                {
+                    "name": "UpdateIntent",
+                    "slots": [],
+                    "samples": [
+                        "to download an update",
+                        "to update status",
+                        "to send an update",
+                        "to get an update",
+                        "for the latest data",
+                        "latest data",
+                        "for an update",
+                        "update status",
+                        "status",
+                        "update",
+                        "to update"
+                    ]
+                },
+                {
+                    "name": "RangeIntent",
+                    "slots": [],
+                    "samples": [
+                        "how much range",
+                        "range",
+                        "how far",
+                        "distance",
+                        "how far can I drive",
+                        "how many miles are in the tank",
+                        "miles",
+                        "how many miles"
+                    ]
+                },
+                {
+                    "name": "ChargeIntent",
+                    "slots": [],
+                    "samples": [
+                        "battery percentage",
+                        "battery",
+                        "what percent battery",
+                        "what percent",
+                        "how much charge it has",
+                        "how much charge",
+                        "percentage",
+                        "percent"
+                    ]
+                },
+                {
+                    "name": "ChargingIntent",
+                    "slots": [],
+                    "samples": [
+                        "charging up",
+                        "if it's on charge",
+                        "currently charging",
+                        "if it's currently charging",
+                        "if it's charging up",
+                        "if it's charging",
+                        "is it charging",
+                        "charging"
+                    ]
+                },
+                {
+                    "name": "ConnectedIntent",
+                    "slots": [],
+                    "samples": [
+                        "currently plugged in",
+                        "is it plugged in",
+                        "if it's plugged in",
+                        "plugged in",
+                        "connected to charger",
+                        "connected to mains",
+                        "connected to power",
+                        "connected"
+                    ]
+                },
+                {
+                    "name": "StartChargingIntent",
+                    "slots": [],
+                    "samples": [
+                        "start charging",
+                        "charge now",
+                        "charge"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        }
+    }
 }
