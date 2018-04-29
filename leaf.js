@@ -1,6 +1,7 @@
 "use strict";
 
 let https = require("https");
+let querystring = require('querystring');
 
 // Require encryption.js to encrypt the password.
 var Encryption = require('./encryption.js');
@@ -12,7 +13,7 @@ let region_code = process.env.regioncode;
 // You should store your username and password as environment variables. 
 // If you don't you can hard code them in the following variables.
 let username = process.env.username; // Your NissanConnect username or email address.
-let password = encrypt(process.env.password); // Your NissanConnect account password.
+let password = querystring.escape(encrypt(process.env.password)); // Your NissanConnect account password.
 
 let sessionid, vin, loginFailureCallback;
 
